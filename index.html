@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UH-List</title>
+    <link rel="stylesheet" href="resources/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+
+    <script type="text/javascript" src="resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/main.js"></script>
+
+    <link rel="stylesheet" href="resources/summernote/summernote.css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="resources/summernote/summernote.js"></script>
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingLibro">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseRegistro" aria-controls="collapseRegistro">
+                Registrar Libro
+              </a>
+            </h4>
+          </div>
+          <div id="collapseRegistro" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLibro">
+            <div class="panel-body">
+              <form class="form-horizontal registro-libro" action="lib/frontcontrollers/createLibro.php" method="POST">
+                <div class="form-group">
+                  <label for="inputFrase" class="col-sm-2 control-label">Titulo:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" name="registro-titulo" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputFrase" class="col-sm-2 control-label">Autor:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" name="registro-autor" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputFrase" class="col-sm-2 control-label">ISBN:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" name="registro-ISBN" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-4 col-sm-6">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-controls="collapseOne">
+                UH-1 Busqueda simple
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              <form class="form-horizontal busqueda-simple" action="lib/frontcontrollers/busquedaSimple.php" method="GET">
+                <div class="form-group">
+                  <label for="inputFrase" class="col-sm-2 control-label">Palabra o frase</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="inputFrase" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-4 col-sm-6">
+                    <button type="button" class="btn btn-primary busqueda-titulo">Busqueda en titulo</button>
+                    <button type="button" class="btn btn-primary busqueda-autor">Busqueda en autor</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                UH-2 Combinacion
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              <form class="form-horizontal busqueda-combinada" action="lib/frontcontrollers/busquedaCombinada.php" method="GET">
+                <div class="form-group">
+                  <label for="inputAutor" class="col-sm-2 control-label">Autor:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" name="combinada-autor" id="inputAutor" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputTitulo" class="col-sm-2 control-label">Titulo:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" name="combinada-titulo" id="inputTitulo" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputISBN" class="col-sm-2 control-label">ISBN:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" name="combinada-ISBN" id="inputISBN" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          Resultados
+        </div>
+        <div class="panel-body">
+          <div class="row resultados">
+          </div>
+          <div class="row libro-info">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
