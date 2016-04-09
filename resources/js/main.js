@@ -8,7 +8,7 @@ $(document).on("ready",function(){
     e.preventDefault();
   });
 
-  $(".revision").on("submit",function(e){
+  $(".revision").on("submit", function(e){
     e.preventDefault();
   });
 
